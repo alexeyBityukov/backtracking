@@ -6,7 +6,7 @@ const getOutputSBGB = (lines) => {
     return lines.map((line) => {
         const parsedLine = line.split(/,/);
         return {
-            date: parsedLine[2],
+            date: parsedLine[2].substring(6) + '.' + parsedLine[2].substring(4,6) + '.' + parsedLine[2].substring(0,4),
             price: parsedLine[7],
         };
     });
