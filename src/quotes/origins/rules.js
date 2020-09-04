@@ -13,7 +13,8 @@ const getOutputSBGB = (lines) => {
 };
 
 const getOutput = {
-    [listOfInstruments.SBGB]: getOutputSBGB
+    [listOfInstruments.SBGB]: getOutputSBGB,
+    [listOfInstruments.SBCB]: getOutputSBGB,
 };
 
 module.exports = getOutput;
