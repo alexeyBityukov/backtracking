@@ -1,6 +1,6 @@
-const { listOfInstruments }  = require( '../../const');
+const { listOfInstruments }  = require( '../../instrumentSettings');
 
-const getOutputSBGB = (lines) => {
+const getOutputFinam = (lines) => {
     lines.shift();
 
     return lines.map((line) => {
@@ -13,8 +13,9 @@ const getOutputSBGB = (lines) => {
 };
 
 const getOutput = {
-    [listOfInstruments.SBGB]: getOutputSBGB,
-    [listOfInstruments.SBCB]: getOutputSBGB,
+    [listOfInstruments.SBGB]: getOutputFinam,
+    [listOfInstruments.SBCB]: getOutputFinam,
+    [listOfInstruments.FXGD]: getOutputFinam,
 };
 
 module.exports = getOutput;

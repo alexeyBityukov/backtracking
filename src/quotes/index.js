@@ -1,22 +1,14 @@
-import { listOfInstruments } from '../const';
-import SBGBQuotes from './SBGB';
-import SBCBQuotes from './SBCB';
+import { importQuotes } from '../instrumentSettings';
 
-const fromatQuotesDates = (quotes) => {
-    return quotes.map(({date}) => (date));
+const fromatQuotesDates = (instrumentQuotes) => {
+    return instrumentQuotes.map(({date}) => date);
 };
 
 const fromatQuotesPrices = (quotes) => {
     return quotes.map(({price}) => (+price));
 };
 
-export default ({
-    [listOfInstruments.SBGB]: {
-        dates: fromatQuotesDates(SBGBQuotes),
-        prices: fromatQuotesPrices(SBGBQuotes),
-    },
-    [listOfInstruments.SBCB]: {
-        dates: fromatQuotesDates(SBCBQuotes),
-        prices: fromatQuotesPrices(SBCBQuotes),
-    },
-})
+export default Object.entries(importQuotes).reduce((acc, [key, value]) => {acc[key] = {
+    dates: fromatQuotesDates(value),
+    prices: fromatQuotesPrices(value),
+}; return acc;}, {});
