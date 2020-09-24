@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import { Line } from 'react-chartjs-2';
 import { useData } from './hooks.js';
 

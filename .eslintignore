@@ -1,0 +1,3 @@
+src/quotes/*
+!src/quotes/index.js
+!src/quotes/origins/

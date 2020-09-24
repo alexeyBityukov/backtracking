@@ -1,6 +1,6 @@
-import { listOfInstruments, longestInstrumentKey } from './instrumentSettings';
+import { listOfInstruments, longestInstrumentKey } from '../instrumentSettings';
 import { chartSettings} from './const';
-import quotes from './quotes/index';
+import quotes from '../quotes/index';
 
 // const parth = {
 //     [listOfInstruments.SBGB]: 0.5,

@@ -1,11 +1,18 @@
-import { importQuotes } from '../instrumentSettings';
+import { importQuotes, longestInstrumentKey } from '../instrumentSettings';
 
-const fromatQuotesDates = (instrumentQuotes) => {
-    return instrumentQuotes.map(({date}) => date);
-};
+const fromatQuotesDates = (instrumentQuotes) => instrumentQuotes.map(({date}) => date);
 
 const fromatQuotesPrices = (quotes) => {
-    return quotes.map(({price}) => (+price));
+    const longestInstrument = importQuotes[longestInstrumentKey];
+
+    const nextQuotesPrices = longestInstrument.map(({date: currentDate}) => {
+        const isExistCurrentDate = quotes.find(({date: dateCurrentInstrument}) => dateCurrentInstrument === currentDate);
+        const nextPrice = isExistCurrentDate ? (+isExistCurrentDate.price) : undefined;
+
+        return nextPrice;
+    });
+
+    return nextQuotesPrices;
 };
 
 export default Object.entries(importQuotes).reduce((acc, [key, value]) => {acc[key] = {
