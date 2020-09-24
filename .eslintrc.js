@@ -17,6 +17,9 @@ module.exports = {
         "prettier"
     ],
     "rules": {
+        "react/function-component-definition": [0],
+        "sort-keys": [0],
+        "no-ternary": [0],
         "one-var": ["error", { separateRequires: true }],
         "react/jsx-indent": [2, 2],
         "prettier/prettier": ["error"],

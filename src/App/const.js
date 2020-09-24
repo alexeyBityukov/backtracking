@@ -1,6 +1,6 @@
 module.exports = {
-    chartSettings: {
-        fill: false,
-        pointRadius: 0,
-    },
+  chartSettings: {
+    fill: false,
+    pointRadius: 0,
+  },
 };

@@ -1,3 +1,5 @@
 src/quotes/*
 !src/quotes/index.js
 !src/quotes/origins/
+*.test.js
+serviceWorker.js
